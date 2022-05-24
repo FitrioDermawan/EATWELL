@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 //router EatWell
-Route::get('/eatwell/home','EatController@index');
+Route::get('/','EatController@index');
 Route::get('/eatwell/buatakun','EatController@reg');
 Route::get('/eatwell/masuk','EatController@login');
 Route::get('/eatwell/dashboard','EatController@dash');
