@@ -30,4 +30,8 @@ class EatController extends Controller
     public function prof() {
         return view('eatwell.profil') ;
     }
+
+    public function verif() {
+        return view('eatwell.verifikasi') ;
+    }
 }

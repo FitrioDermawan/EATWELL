@@ -22,6 +22,7 @@ Route::get('/eatwell/masuk','EatController@login');
 Route::get('/eatwell/dashboard','EatController@dash');
 Route::get('/eatwell/kalkulasi','EatController@kalku');
 Route::get('/eatwell/profil','EatController@prof');
+Route::get('/eatwell/buatakun/verifikasi','EatController@verif');
 
 
 

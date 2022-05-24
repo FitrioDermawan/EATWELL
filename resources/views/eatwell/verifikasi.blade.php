@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>EatWell @yield('title')</title>
+    <title>EatWell - Verifikasi</title>
     <meta content="" name="description">
 
     <meta content="" name="keywords">
@@ -42,24 +42,32 @@
   ======================================================== -->
 </head>
 
-<body id="reglog">
+<body id="verifikasi">
 
     <div class="container-fluid  align-items-center justify-content-between">
         <div class="row">
-            <div class="col-5  logoname">
-                <img src="{{ asset('assets/eatimg/logo_name_white.png') }}" class="img-fluid" alt="">
+            <div class="col-4">
             </div>
+            <div class="col-4 verifikasi">
+                <img src="{{ asset('assets/eatimg/verifikasi.png') }}" class="img-fluid" alt="">
+                <h1>Verifikasi Email Kamu</h1>
+                <p id="info">Masukkan 4 digit kode yang dikirimkan ke muhammadirfan2022@gmail.com</p>
+                <div class="col">
+                    <div class="row kode">
+                        <input type="text" name="kode1" placeholder="" />
 
-            <div class="col-7  whitebox">
-                    <a class="col arrow" href="home">
-                        <img src="{{ asset('assets/eatimg/arrow_back.png') }}" class="img-fluid" alt="" >
-                    </a>
-                    <div class="col content">
-                        @yield('content')
+                        <input type="text" name="kode2" placeholder="" />
 
+                        <input type="text" name="kode3" placeholder="" />
+
+                        <input type="text" name="kode4" placeholder="" />
                     </div>
-
                 </div>
+                <p id="kirimulang">Kirim ulang kode</p>
+                <input type="submit" name="signup_confirm" value="Konfirmasi" />
+            </div>
+            <div class="col-4">
+            </div>
         </div>
     </div>
 
@@ -67,10 +75,7 @@
 
 
 
-    <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a> -->
 
-    <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/purecounter/purecounter.js') }}"></script>
     <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

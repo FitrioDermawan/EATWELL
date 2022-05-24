@@ -437,14 +437,14 @@ text-align: center;
 # Register
 --------------------------------------------------------------*/
 
-#register {
+#reglog {
     background: #19191B;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 
 }
 
-.logoname img {
+#reglog .logoname img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -453,38 +453,38 @@ text-align: center;
     width: 40%;
 }
 
-.nopadding {
+#reglog .nopadding {
     margin: 0 !important;
 }
 
-.whitebox {
+#reglog .whitebox {
     background-color: #fff;
     border-radius:38px 0px 0px 38px ;
 }
 
-.whitebox .arrow img {
+#reglog .whitebox .arrow img {
     margin-top: 3%;
     width: 8%;
 
 }
 
-.whitebox .reglog {
+#reglog .whitebox .content {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 12%;
 
 }
 
-.whitebox .reglog h1 {
+#reglog .whitebox .content h1 {
     font-weight: bold;
 }
 
-label {
+#reglog label {
     font-size: .85rem;
     text-transform: uppercase;
     color: #ccc;
   }
-  .form-control {
+  #reglog .form-control {
     background-color: transparent;
     border-top: 0;
     border-right: 0;
@@ -492,12 +492,12 @@ label {
     border-radius: 0;
   }
 
-  .reglog h1 {
+  #reglog .content h1 {
       margin-bottom: 5%;
   }
 
-  input[type="text"],
-  input[type="password"] {
+  #reglog input[type="text"],
+  #reglog input[type="password"] {
     display: block;
     box-sizing: border-box;
     margin-bottom: 20px;
@@ -511,8 +511,8 @@ label {
     transition: 0.2s ease;
   }
 
-  input[type="text"]:focus,
-  input[type="password"]:focus {
+  #reglog input[type="text"]:focus,
+  #reglog input[type="password"]:focus {
     border-bottom: 2px solid #F33B61;
     color: #F33B61;
     transition: 0.2s ease;
@@ -522,7 +522,7 @@ label {
     outline: 0 !important;
 }
 
-input[type="submit"] {
+#reglog input[type="submit"] {
     margin-top: 5%;
     padding: 8px 45px;
     width: 80%;
@@ -536,30 +536,131 @@ input[type="submit"] {
     cursor: pointer;
   }
 
-  input[type="submit"]:hover,
-  input[type="submit"]:focus {
+  #reglog input[type="submit"]:hover,
+  #reglog input[type="submit"]:focus {
     opacity: 0.8;
     transition: 0.1s ease;
     font-size: 15px;
   }
 
-  input[type="submit"]:active {
+  #reglog input[type="submit"]:active {
     opacity: 1;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     transition: 0.1s ease;
   }
 
-  .reglog p {
+  #reglog .content p {
       margin-top: 3%;
       color: #A0A0A0;
       font-weight: 500;
 
   }
 
-  .reglog p span {
+  #reglog .content p span {
       font-weight: bold;
       color: #19191B;
   }
+
+
+/*--------------------------------------------------------------
+# Verifikasi
+--------------------------------------------------------------*/
+
+.verifikasi {
+    text-align: center;
+    margin-top: 8%;
+
+}
+
+.verifikasi img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20%;
+    max-height: auto;
+    margin-bottom: 20px;
+
+}
+
+.verifikasi h1 {
+    font-weight: bold;
+}
+
+.verifikasi #info {
+    color: #A0A0A0;
+    padding-bottom: 5%;
+}
+
+.verifikasi #kirimulang {
+    color: #A0A0A0;
+    margin-top: 10%;
+    text-decoration: underline;
+}
+
+  .verifikasi .form-control {
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .verifikasi .kode {
+      margin: 0 !important;
+      padding: 0 !important;
+  }
+
+  .verifikasi input[type="text"] {
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px;
+    border: 1px solid #AAA;
+    font-weight: 500;
+    font-size: 30px;
+    transition: 0.2s ease;
+    max-width: 56px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .verifikasi input[type="text"]:focus{
+    border: 2px solid #F33B61;
+    color: #F33B61;
+    transition: 0.2s ease;
+  }
+
+*:focus {
+    outline: 0 !important;
+}
+
+.verifikasi input[type="submit"] {
+    padding: 8px 45px;
+    width: 80%;
+    height: auto;
+    background: #19191B;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: 500;
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
+
+  .verifikasi input[type="submit"]:hover,
+  .verifikasi input[type="submit"]:focus {
+    opacity: 0.8;
+    transition: 0.1s ease;
+    font-size: 15px;
+  }
+
+  .verifikasi input[type="submit"]:active {
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+  }
+
+
 
 /*--------------------------------------------------------------
 # Dashboard
@@ -708,7 +809,6 @@ input[type="submit"] {
   }
 
 
-
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
@@ -832,9 +932,9 @@ input[type="submit"] {
     transition: all 0.3s;
   }
 
-#main h2 {
+#main .pagetitle h2 {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 2%;
 
 }
@@ -862,12 +962,139 @@ input[type="submit"] {
   }
 
   .card-body {
-    padding: 20px 40px 20px 40px;
+    padding: 20px 30px 20px 30px;
   }
 
   .card-img-overlay {
     background-color: rgba(255, 255, 255, 0.6);
   }
+
+  #main .umur {
+      max-width: 220px;
+  }
+
+
+
+.rekomendasi .card {
+    background-color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.rekomendasi img {
+    max-width: 50px;
+    max-height: 55px;
+}
+
+.rekomendasi .col-xl {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.rekomendasi #kalori {
+    border: 0;
+    background-color: transparent;
+    padding: 0 !important;
+    color: #8E8EA1;
+    font-size: 14px;
+}
+
+.rekomendasi h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rekomendasi .card {
+    width: 300px;
+}
+
+.rekomendasi .makanan {
+    color: #00A389;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.rekomendasi hr {
+    padding-top: 0 !;
+}
+
+.rekomendasi .card-body p {
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.waktu {
+    color: #5B5B5B;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/*--------------------------------------------------------------
+# Kalkulasi
+--------------------------------------------------------------*/
+
+.kalkulasi {
+    margin-top: 50px;
+}
+
+#main h3 {
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 15px;
+}
+
+.kalkulasi .form-kalkulasi {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 24px 0px 24px 10px;
+    width: 80%;
+    height: 32px;
+    border: 1px solid #B1B1B1;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.kalkulasi .form-kalkulasi:focus {
+border: 2px solid #19191B;
+    color: #19191B;
+    transition: 0.2s ease;
+}
+
+.kalkulasi input[placeholder] {
+    color: #B1B1B1;
+}
+
+.kalkulasi input[type="submit"] {
+    background: #2B7CF5;
+    height: 60px;
+    padding: 0px 100px 0px 100px;
+    border: none;
+    border-radius: 15px;
+    color: #FFF;
+    font-weight: bold;
+    transition: 0.1s ease;
+    cursor: pointer;
+    font-size: 19px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .kalkulasi input[type="submit"]:hover,
+  .kalkulasi input[type="submit"]:focus {
+    opacity: 0.8;
+    transition: 0.1s ease;
+    font-size: 20px;
+  }
+
+
+
+
+
 
 
 
