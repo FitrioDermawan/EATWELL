@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 //router EatWell
 Route::get('/','EatController@index');
@@ -21,8 +21,9 @@ Route::get('/eatwell/buatakun','EatController@reg');
 Route::get('/eatwell/masuk','EatController@login');
 Route::get('/eatwell/dashboard','EatController@dash');
 Route::get('/eatwell/kalkulasi','EatController@kalku');
-Route::get('/eatwell/profil','EatController@prof');
+Route::get('/eatwell/profil','UpdateDataDiri\UpdateDateDiriController@displayProfil');
 Route::get('/eatwell/buatakun/verifikasi','EatController@verif');
+Route::post('/eatwell/cekprofil','UpdateDataDiri\UpdateDateDiriController@ValidateData');
 
 
 

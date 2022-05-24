@@ -27,8 +27,8 @@ nav-link collapsed
     <div class="pagetitle">
         <h2>Data Diri</h2>
     </div>
-    <form class="kalkulasi">
-
+    <form class="kalkulasi" action="/eatwell/cekprofil" method="POST">
+@csrf
         <div class="col-lg-6">
             <div class="row">
                 <div class="col-3">
@@ -60,13 +60,11 @@ nav-link collapsed
 
         </div>
 
-    </form>
 
     <div class="pagetitle">
         <h2>Data Diri</h2>
     </div>
 
-    <form class="kalkulasi">
 
         <div class="col-lg-6">
             <div class="row">
