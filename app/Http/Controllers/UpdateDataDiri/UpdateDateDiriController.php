@@ -4,6 +4,9 @@ namespace App\Http\Controllers\UpdateDataDiri;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Dotenv\Regex\Success;
+use PhpParser\Node\Expr\PostDec;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class UpdateDateDiriController extends Controller
 {
@@ -16,30 +19,51 @@ class UpdateDateDiriController extends Controller
         //byMuhammad Irfan
         public function ValidateData(Request $request)
         {
-            //preproces data request
+            if($request->validate([
+                'tinggi' => 'required|integer',
+                'beratbadan' => 'required|integer',
+                'umur' => 'required|integer',
+                'alergimakanan' => 'required',
+                'kategori' => 'required'
+            ]))
 
 
-            if () //format data valid
-            {
-                if () //data saved
-                {
-                    $status = saveAccountData($request) ;
-                    //Bebas tiap kelompok menentukan , mau pakai
-                    //sesuai Sequence , atau tidak
-                    // kalau tidak , jangan lupa sequence
-                    Profil::create() ;
-                } else //data not saved
-                {
 
-                }
-
-                return view('eatwell.dashboard') ; //gantinya display
-            } else //format data tidak valid
-            {
-
-            }
-
+            // //preproces data request
+            // $validasiData = $request->validate([
+            //     'tinggi' => 'required|integer',
+            //     'beratbadan' => 'required|integer',
+            //     'umur' => 'required|integer|',
+            //     'alergimakanan' => 'required',
+            //     'kategori' => 'required'
+            // ]);
+            // Post::create();
+            return redirect('eatwell.dashboard')->with('Success', 'Data kamu sudah tersimpan!');
         }
+
+
+
+            // if () //format data valid
+            // {
+            //     if () //data saved
+            //     {
+            //         $status = saveAccountData($request) ;
+            //         //Bebas tiap kelompok menentukan , mau pakai
+            //         //sesuai Sequence , atau tidak
+            //         // kalau tidak , jangan lupa sequence
+            //         Profil::create() ;
+            //     } else //data not saved
+            //     {
+
+            //     }
+
+            //     return view('eatwell.dashboard') ; //gantinya display
+            // } else //format data tidak valid
+            // {
+
+            // }
+
+
 
         private function saveAccountData(Request $request)
         {
