@@ -22,6 +22,7 @@
 @endsection
 
 @section('content')
+//Made by Raynaldi Siahaan
 
 <main id="main" class="main">
 

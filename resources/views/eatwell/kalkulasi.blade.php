@@ -23,6 +23,9 @@
 
 
 @section('content')
+
+//made by Raynaldi Siahaan
+
     <main id="main" class="main">
 
         <div class="pagetitle">
