@@ -39,7 +39,12 @@
                         <h3> Karbohidrat </h3>
                     </div>
                     <div class="col-6">
-                        <input type="text" class="form-kalkulasi" id="qty_carb" placeholder="Nasi, roti, mie">
+                        <select name="protein" id="protein" class="form-control" placeholder="Ayam">
+                            @foreach ($food as $m)
+                            <option value="{{$m->$makanan}}">{{$m->$makanan}}</option>
+                            <option value="{{$m->$makanan}}">{{$m->$makanan}}</option>
+                            @endforeach
+                          </select>
                     </div>
 
                 </div>
@@ -48,7 +53,10 @@
                         <h3> Protein </h3>
                     </div>
                     <div class="col-6">
-                        <input type="text" class="form-kalkulasi" id="qty_pro" placeholder="Paha ayam, iga sapi">
+                        <select name="kalori" id="kalori" style="border:none">
+                            <option value="MinKalori">Min-Kalori</option>
+                            <option value="MaxKalori">Max-Kalori</option>
+                          </select>
                     </div>
 
                 </div>
@@ -57,8 +65,10 @@
                         <h3> Buah & Sayur </h3>
                     </div>
                     <div class="col-6">
-                        <input type="text" style="border:1" class="form-kalkulasi" id="qty_fruit"
-                            placeholder="Apel, salad buah">
+                        <select name="kalori" id="kalori" style="border:none">
+                            <option value="MinKalori">Min-Kalori</option>
+                            <option value="MaxKalori">Max-Kalori</option>
+                          </select>
                     </div>
                 </div>
 

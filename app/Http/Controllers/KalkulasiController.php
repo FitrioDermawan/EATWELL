@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class KalkulasiController extends Controller
 {
-    public function kalkulasi()
+    public function index()
     {
     //mengambil data
-    $makanan = DB::table('makanan')->();
+    $food = DB::table('makanan')->get();
 
     //mengirim data ke view
-    return view('kalkulasi',['makanan'=>$pegawai]);
+    return view('kalkulasi',['makanan'=>$food]);
     }
 }
