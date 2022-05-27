@@ -19,13 +19,12 @@ class UpdateDateDiriController extends Controller
         //byMuhammad Irfan
         public function ValidateData(Request $request)
         {
-            if($request->validate([
-                'tinggi' => 'required|integer',
-                'beratbadan' => 'required|integer',
-                'umur' => 'required|integer',
+            $this->validate($request,[
+                'tinggi' => 'required|numeric',
+                'berat' => 'required|numeric',
+                'umur' => 'required|numeric',
                 'alergimakanan' => 'required',
-                'kategori' => 'required'
-            ]))
+            ]);
 
 
 
@@ -38,8 +37,9 @@ class UpdateDateDiriController extends Controller
             //     'kategori' => 'required'
             // ]);
             // Post::create();
-            return redirect('eatwell.dashboard')->with('Success', 'Data kamu sudah tersimpan!');
+            return view('eatwell.cekprofil',['data' => $request]);
         }
+
 
 
 
