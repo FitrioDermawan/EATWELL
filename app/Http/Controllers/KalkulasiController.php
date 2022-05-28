@@ -12,6 +12,6 @@ class KalkulasiController extends Controller
     $food = DB::table('makanan')->get();
 
     //mengirim data ke view
-    return view('kalkulasi',['makanan'=>$food]);
+    return view('eatwell.kalkulasi',['makanan'=>$food]);
     }
 }
