@@ -39,6 +39,7 @@
                         <h3> Karbohidrat </h3>
                     </div>
                     <div class="col-6">
+                        //
                         <select name="protein" id="protein" class="form-control" placeholder="Ayam">
                             @foreach ($food as $m)
                             <option value="{{$m->$makanan}}">{{$m->$makanan}}</option>
