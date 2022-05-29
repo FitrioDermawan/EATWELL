@@ -8,7 +8,7 @@ use Dotenv\Regex\Success;
 use PhpParser\Node\Expr\PostDec;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
-class UpdateDateDiriController extends Controller
+class UpdateDataDiriController extends Controller
 {
         //by Fitrio Dermawan
         public function displayProfil() {
