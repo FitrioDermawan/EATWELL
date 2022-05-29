@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KalkulasiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +22,7 @@ Route::get('/','EatController@index');
 Route::get('/eatwell/buatakun','EatController@reg');
 Route::get('/eatwell/masuk','EatController@login');
 Route::get('/eatwell/dashboard','EatController@dash');
-Route::get('/eatwell/kalkulasi','EatController@kalku');
+// Route::get('/eatwell/kalkulasi','EatController@kalku');
 Route::get('/eatwell/kalkulasi', 'KalkulasiController@index');
 Route::get('/eatwell/profil','UpdateDataDiri\UpdateDateDiriController@displayProfil');
 Route::get('/eatwell/buatakun/verifikasi','EatController@verif');

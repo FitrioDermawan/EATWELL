@@ -39,11 +39,13 @@
                         <h3> Karbohidrat </h3>
                     </div>
                     <div class="col-6">
-                        //
-                        <select name="protein" id="protein" class="form-control" placeholder="Ayam">
+
+                        <select name="karbohidrat" id="karbohidrat" class="form-control" placeholder="Ayam">
                             @foreach ($food as $m)
-                            <option value="{{$m->$makanan}}">{{$m->$makanan}}</option>
-                            <option value="{{$m->$makanan}}">{{$m->$makanan}}</option>
+                            @if ($m->jenismakanan == "Karbohidrat")
+                            <option value="{{$m->namamakanan}}">{{$m->namamakanan}}</option>
+                            @endif
+
                             @endforeach
                           </select>
                     </div>
@@ -54,9 +56,13 @@
                         <h3> Protein </h3>
                     </div>
                     <div class="col-6">
-                        <select name="kalori" id="kalori" style="border:none">
-                            <option value="MinKalori">Min-Kalori</option>
-                            <option value="MaxKalori">Max-Kalori</option>
+                        <select name="protein" id="protein" class="form-control">
+                            @foreach ($food as $m)
+                            @if ($m->jenismakanan == "Protein")
+                            <option value="{{$m->namamakanan}}">{{$m->namamakanan}}</option>
+                            @endif
+
+                            @endforeach
                           </select>
                     </div>
 
@@ -66,9 +72,13 @@
                         <h3> Buah & Sayur </h3>
                     </div>
                     <div class="col-6">
-                        <select name="kalori" id="kalori" style="border:none">
-                            <option value="MinKalori">Min-Kalori</option>
-                            <option value="MaxKalori">Max-Kalori</option>
+                        <select name="BuahSayur" id="BuahSayur" class="form-control">
+                            @foreach ($food as $m)
+                            @if ($m->jenismakanan == "Buah" or $m->jenismakanan == "Sayur")
+                            <option value="{{$m->namamakanan}}">{{$m->namamakanan}}</option>
+                            @endif
+
+                            @endforeach
                           </select>
                     </div>
                 </div>
