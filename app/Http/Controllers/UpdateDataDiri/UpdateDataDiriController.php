@@ -4,6 +4,7 @@ namespace App\Http\Controllers\UpdateDataDiri;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Dotenv\Regex\Success;
 use PhpParser\Node\Expr\PostDec;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -71,10 +72,13 @@ class UpdateDataDiriController extends Controller
 
 
 
-        private function saveAccountData(Request $request)
+        public function saveAccountData(Request $request)
         {
-            Profil::create() ;
-            return true ;
+            //mengambil data
+            $diri = DB::table('datadiri')->get();
+
+            //mengirim data ke view
+            return view('eatwell.dashboard', compact('diri'));
         }
 
         public function calculateCaloriNeeded(Request $request)
