@@ -37,7 +37,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Tinggi</h6>
-                        <h3 class="card-content">165 cm</h3>
+                        <h3 class="card-content">{{ $data->tinggi }} cm</h3>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Berat Badan</h6>
-                        <h3 class="card-content">60 kg</h3>
+                        <h3 class="card-content">{{ $data->berat }} kg</h3>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="card umur">
                     <div class="card-body">
                         <h6 class="card-title">Umur</h6>
-                        <h3 class="card-content">19 Tahun</h3>
+                        <h3 class="card-content">{{ $data->umur }} Tahun</h3>
                     </div>
                 </div>
             </div>

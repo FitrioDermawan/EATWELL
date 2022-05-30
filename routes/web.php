@@ -19,14 +19,13 @@ use App\Http\Controllers\KalkulasiController;
 
 //router EatWell
 Route::get('/','EatController@index');
-Route::get('/eatwell/buatakun','EatController@reg');
-Route::get('/eatwell/masuk','EatController@login');
-Route::get('/eatwell/dashboard','EatController@dash');
-Route::get('/eatwell/kalkulasi', 'KalkulasiController@index');
-Route::get('/eatwell/profil','UpdateDataDiri\UpdateDataDiriController@displayProfil');
-Route::get('/eatwell/buatakun/verifikasi','EatController@verif');
-Route::post('/eatwell/cekprofil','UpdateDataDiri\UpdateDataDiriController@ValidateData');
-
+Route::get('/buatakun','EatController@reg');
+Route::get('/masuk','EatController@login');
+Route::get('/dashboard','EatController@dash');
+Route::get('/kalkulasi', 'KalkulasiController@index');
+Route::get('/profil','UpdateDataDiri\UpdateDataDiriController@displayProfil');
+Route::get('/buatakun/verifikasi','EatController@verif');
+Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@ValidateData');
 
 
 

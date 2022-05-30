@@ -16,15 +16,21 @@ class UpdateDataDiriController extends Controller
         }
 
 
-        //byMuhammad Irfan
+        //by Muhammad Irfan
         public function ValidateData(Request $request)
         {
+
+            $messages = [
+                'required' => 'Kolom :attribute harus diisi.'
+            ];
+
             $this->validate($request,[
+                'jeniskelamin' => 'required',
                 'tinggi' => 'required|numeric',
                 'berat' => 'required|numeric',
                 'umur' => 'required|numeric',
-                'alergimakanan' => 'required',
-            ]);
+                'alergi' => 'alpha'
+            ],$messages);
 
 
 
@@ -37,7 +43,7 @@ class UpdateDataDiriController extends Controller
             //     'kategori' => 'required'
             // ]);
             // Post::create();
-            return view('eatwell.cekprofil',['data' => $request]);
+            return view('eatwell.dashboard',['data' => $request]);
         }
 
 

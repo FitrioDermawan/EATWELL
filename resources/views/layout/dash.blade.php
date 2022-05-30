@@ -23,6 +23,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -46,7 +48,9 @@
   ======================================================== -->
 </head>
 
-<body id="dashboard">
+{{-- By Fitrio Dermawan --}}
+
+<body id="dash">
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
@@ -54,7 +58,7 @@
                 <img src="{{ asset('assets/eatimg/logo.png') }}" alt="" style="width: 20%;">
                 <span>EatWell</span>
             </a>
-        </div><!-- End Logo -->
+        </div>
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
@@ -77,8 +81,7 @@
                             <i class="bi bi-exclamation-circle text-warning"></i>
                             <div>
                                 <h4>Makan Malam</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>30 menit yang lalu</p>
+                                <p>18.00 - 21.00</p>
                             </div>
                         </li>
 
@@ -90,8 +93,7 @@
                             <i class="bi bi-x-circle text-danger"></i>
                             <div>
                                 <h4>Makan Siang</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>1 hr. ago</p>
+                                <p>12.00 - 14.00</p>
                             </div>
                         </li>
 
@@ -103,20 +105,19 @@
                             <i class="bi bi-check-circle text-success"></i>
                             <div>
                                 <h4>Makan Pagi</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>2 hrs. ago</p>
+                                <p>7.00 - 9.00</p>
                             </div>
                         </li>
 
-                    </ul><!-- End Notification Dropdown Items -->
+                    </ul>
 
-                </li><!-- End Notification Nav -->
+                </li>
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="{{ asset('assets/eatimg/placeholder.png') }}" alt="Profile" class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2">Muhammad Irfan</span>
-                    </a><!-- End Profile Iamge Icon -->
+                    </a>
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
@@ -152,13 +153,13 @@
                             </a>
                         </li>
 
-                    </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
+                    </ul>
+                </li>
 
             </ul>
-        </nav><!-- End Icons Navigation -->
+        </nav>
 
-    </header><!-- End Header -->
+    </header>
 
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
@@ -167,47 +168,42 @@
                     <i class="bi bi-grid-1x2"></i>
                     <span>Dashboard</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
+            </li>
 
             <li class="nav-item">
-                <a class="@yield('home')" href="home">
+                <a class="@yield('home')" href="">
                     <i class="bi bi-house"></i>
                     <span>Home</span>
                 </a>
-            </li><!-- End Profile Page Nav -->
+            </li>
 
             <li class="nav-item">
                 <a class="@yield('kalkulasi')" href="kalkulasi">
                     <i class="bi bi-plus-circle"></i>
                     <span>Kalkulasi</span>
                 </a>
-            </li><!-- End F.A.Q Page Nav -->
+            </li>
 
             <li class="nav-item">
                 <a class="@yield('profil')" href="profil">
                     <i class="bi bi-person"></i>
                     <span>Profil</span>
                 </a>
-            </li><!-- End Contact Page Nav -->
+            </li>
 
             <li class="nav-item">
                 <a class="@yield('pengaturan')" href="">
                     <i class="bi bi-gear"></i>
                     <span>Pengaturan</span>
                 </a>
-            </li><!-- End Register Page Nav -->
+            </li>
         </ul>
 
-    </aside><!-- End Sidebar-->
+    </aside>
 
     @yield('content')
 
 
-
-
-
-    <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a> -->
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/purecounter/purecounter.js') }}"></script>
@@ -220,6 +216,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
 
 </body>
 
