@@ -75,8 +75,8 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>-->
-                    <li><a class="nav-link scrollto" href="masuk">Masuk</a></li>
-                    <li><a class="getstarted scrollto" href="buatakun">Buat Akun</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('login') }}">Masuk</a></li>
+                    <li><a class="getstarted scrollto" href="{{ route('register') }}">Buat Akun</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
