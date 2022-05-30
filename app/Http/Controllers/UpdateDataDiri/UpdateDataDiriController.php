@@ -5,6 +5,7 @@ namespace App\Http\Controllers\UpdateDataDiri;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Dotenv\Regex\Success;
+use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\PostDec;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -71,10 +72,17 @@ class UpdateDataDiriController extends Controller
 
 
 
-        private function saveAccountData(Request $request)
+        public function saveAccountData(Request $request)
         {
-            Profil::create() ;
-            return true ;
+            DB::table('datadiri')->insert([
+                'tinggibadan' => $request->tinggi,
+                'beratbadan' => $request->berat,
+                'umur' => $request->rumur,
+                'jeniskelamin' => $request->jeniskelamin
+            ]);
+            return redirect('/dashboard');
+            // Profil::create() ;
+            // return true ;
         }
 
         public function calculateCaloriNeeded(Request $request)
