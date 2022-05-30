@@ -4,6 +4,7 @@ namespace App\Http\Controllers\UpdateDataDiri;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Dotenv\Regex\Success;
 use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\PostDec;
@@ -74,6 +75,11 @@ class UpdateDataDiriController extends Controller
 
         public function saveAccountData(Request $request)
         {
+            // //mengambil data
+            // $diri = DB::table('datadiri')->get();
+
+            // //mengirim data ke view
+            // return view('eatwell.dashboard', compact('diri'));
             DB::table('datadiri')->insert([
                 'tinggibadan' => $request->tinggi,
                 'beratbadan' => $request->berat,
@@ -81,8 +87,6 @@ class UpdateDataDiriController extends Controller
                 'jeniskelamin' => $request->jeniskelamin
             ]);
             return redirect('/dashboard');
-            // Profil::create() ;
-            // return true ;
         }
 
         public function calculateCaloriNeeded(Request $request)

@@ -21,7 +21,7 @@ use App\Http\Controllers\KalkulasiController;
 Route::get('/','EatController@index');
 Route::get('/buatakun','EatController@reg');
 Route::get('/masuk','EatController@login');
-Route::get('/dashboard','EatController@dash');
+Route::get('/dashboard','UpdateDataDiri\UpdateDataDiriController@saveAccountData');
 Route::get('/kalkulasi', 'KalkulasiController@index');
 Route::get('/profil','UpdateDataDiri\UpdateDataDiriController@displayProfil');
 Route::get('/buatakun/verifikasi','EatController@verif');

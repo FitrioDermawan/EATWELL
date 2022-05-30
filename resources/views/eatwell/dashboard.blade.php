@@ -30,14 +30,14 @@
         <h2>Halo, Muhammad Irfan</h2>
     </div>
 
-
+    @foreach ( $diri as $d )
     <div class="col-lg-8">
         <div class="row">
             <div class="col-xxl-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Tinggi</h6>
-                        <h3 class="card-content">{{ $data->tinggi }} cm</h3>
+                        <h3 class="card-content">{{$d->tinggibadan}} cm</h3>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Berat Badan</h6>
-                        <h3 class="card-content">{{ $data->berat }} kg</h3>
+                        <h3 class="card-content">{{$d->beratbadan}} kg</h3>
                     </div>
                 </div>
             </div>
@@ -55,12 +55,13 @@
                 <div class="card umur">
                     <div class="card-body">
                         <h6 class="card-title">Umur</h6>
-                        <h3 class="card-content">{{ $data->umur }} Tahun</h3>
+                        <h3 class="card-content">{{$d->umur}} Tahun</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
     <br>
     <br>
     <div class="pagetitle">
