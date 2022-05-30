@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Dotenv\Regex\Success;
-use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\PostDec;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -75,16 +74,12 @@ class UpdateDataDiriController extends Controller
 
         public function saveAccountData(Request $request)
         {
-            // //mengambil data
-            // $diri = DB::table('datadiri')->get();
-
-            // //mengirim data ke view
-            // return view('eatwell.dashboard', compact('diri'));
             DB::table('datadiri')->insert([
+                'jeniskelamin' => $request->jeniskelamin,
                 'tinggibadan' => $request->tinggi,
                 'beratbadan' => $request->berat,
-                'umur' => $request->rumur,
-                'jeniskelamin' => $request->jeniskelamin
+                'umur' => $request->umur,
+
             ]);
             return redirect('/dashboard');
         }
@@ -109,5 +104,12 @@ class UpdateDataDiriController extends Controller
         //    return redirect('/')->with('message','Your answer is:'.$result);
         }
         // by I Dewa Gede Cresna Saputra
+        public function displayDashboard(Request $request) {
+            //mengambil data
+            $data = DB::table('datadiri')->get();
+
+            //mengirim data ke view
+            return view('eatwell.dashboard', compact('data'));
+        }
 }
 

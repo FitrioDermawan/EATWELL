@@ -30,7 +30,7 @@
         <h2>Halo, Muhammad Irfan</h2>
     </div>
 
-    @foreach ( $diri as $d )
+    @foreach ( $data as $d )
     <div class="col-lg-8">
         <div class="row">
             <div class="col-xxl-3 col-md-6">

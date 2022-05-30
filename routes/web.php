@@ -21,11 +21,20 @@ use App\Http\Controllers\KalkulasiController;
 Route::get('/','EatController@index');
 Route::get('/buatakun','EatController@reg');
 Route::get('/masuk','EatController@login');
-Route::get('/dashboard','UpdateDataDiri\UpdateDataDiriController@saveAccountData');
-Route::get('/kalkulasi', 'KalkulasiController@index');
+
 Route::get('/profil','UpdateDataDiri\UpdateDataDiriController@displayProfil');
-Route::get('/buatakun/verifikasi','EatController@verif');
+Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@saveAccountData');
+Route::get('/dashboard','UpdateDataDiri\UpdateDataDiriController@displayDashboard');
 Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@ValidateData');
+
+
+Route::get('/kalkulasi', 'KalkulasiController@displayKalkulasi');
+
+Route::get('/riwayatpenyakit','UpdateRiwayatPenyakitController@displayRiwayatPenyakit');
+
+Route::get('/buatakun/verifikasi','EatController@verif');
+
+
 
 
 

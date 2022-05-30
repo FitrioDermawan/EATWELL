@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class KalkulasiController extends Controller
 {
-    public function index()
+    public function displayKalkulasi()
     {
     //mengambil data
     $food = DB::table('makanan')->get();
@@ -14,4 +14,18 @@ class KalkulasiController extends Controller
     //mengirim data ke view
     return view('eatwell.kalkulasi', compact('food'));
     }
+
+    public function calculateData(){
+
+    }
+
+    public function isCalculationCorrect(){
+
+    }
+
+    public function displayCalculation(){
+
+    }
+
+
 }
