@@ -77,9 +77,25 @@ class UpdateDataDiriController extends Controller
             return true ;
         }
 
-        private function calculateCaloriNeeded(Integer $data)
+        public function calculateCaloriNeeded(Request $request)
         {
-
+        //     $jeniskelamin = $request->input('jeniskelamin');
+        //     $tinggi = $request->input('tinggi');
+        //     $berat = $request->input('berat');
+        //     $umur = $request->input('umur');
+        //     $result = 0;
+        //     if ($jeniskelamin == 'M') {
+        //         $result = round(1.2 * (66.5 + (13.75 * $berat) + (5.003 * $tinggi) - (6.755 * $umur)));
+        //     }
+        //     else if ($jeniskelamin == 'F') {
+        //         $result = round(1.2 * (655 + (9.563 * $berat) + (1.850 * $tinggi) - (4.676 * $umur)));
+        //     }
+        //     else {
+        //         $result = round(1.9 * (655 + (9.563 * $berat) + (1.850 * $tinggi) - (4.676 * $umur)));
+        //     }
+        //    //echo $result;
+        //    return redirect('/')->with('message','Your answer is:'.$result);
         }
         // by I Dewa Gede Cresna Saputra
 }
+

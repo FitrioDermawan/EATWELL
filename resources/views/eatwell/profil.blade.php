@@ -54,6 +54,17 @@
                     </div>
                 </fieldset>
 
+                {{-- <div class="form-group row">
+                    <label for="jeniskelamin" class="col-sm-4 col-form-label" id="jeniskelamin" name="jeniskelamin" >Jenis Kelamin</label>
+                    <div class="col-sm-8 kolom-isian">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected></option>
+                            <option value="M">Pria</option>
+                            <option value="F">Wanita</option>
+                          </select>
+                    </div>
+                </div> --}}
+
                 <div class="form-group row">
                     <label for="tinggi" class="col-sm-4 col-form-label">Tinggi</label>
                     <div class="col-sm-8 kolom-isian">
@@ -101,12 +112,21 @@
                     </div>
                 </div>
             </div>
+            {{-- <div class="row">
+                <div class="col-md-4 m-auto">
+                    @if(session('message'))
+                    <div class="alert alert-warning">
+                        <h1 class="text-center">{{ session('message') }}</h1>
+                    </div>
+                    @endif
+                </div>
+            </div> --}}
         </div>
 
 
     </main>
 
-    {{-- <script src="{{ asset('assets/js/datadiri.js') }}"></script>
+    <script src="{{ asset('assets/js/datadiri.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -115,5 +135,5 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script> --}}
+    </script>
 @endsection
