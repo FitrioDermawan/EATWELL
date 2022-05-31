@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Dotenv\Regex\Success;
+use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\PostDec;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
@@ -33,6 +34,32 @@ class UpdateDataDiriController extends Controller
                 'alergi' => 'alpha'
             ],$messages);
 
+            // $jk == $request->input('jeniskelamin');
+
+            // if ($request->jeniskelamin == 'on') {
+            //     $jk == 'M';
+            // } else if ($request->jeniskelamin == 'on') {
+            //     $jk == 'F';
+            // }
+
+            $user = Auth::user();
+            $idusers = $user->id;
+
+            // var_dump($request);
+            DB::table('datadiri')->insert([
+                'jeniskelamin' => $request->jeniskelamin,
+                'tinggibadan' => $request->tinggi,
+                'beratbadan' => $request->berat,
+                'umur' => $request->umur,
+                'iduser' => $idusers
+
+            ]);
+
+            //mengambil data
+            $data = DB::table('datadiri')->get();
+
+            //mengirim data ke view
+            return view('eatwell.dashboard', compact('data'));
 
 
             // //preproces data request
@@ -44,7 +71,7 @@ class UpdateDataDiriController extends Controller
             //     'kategori' => 'required'
             // ]);
             // Post::create();
-            return view('eatwell.dashboard',['data' => $request]);
+            return view('eatwell.dashboard',['data' => $request],);
         }
 
 
@@ -72,17 +99,18 @@ class UpdateDataDiriController extends Controller
 
 
 
-        public function saveAccountData(Request $request)
-        {
-            DB::table('datadiri')->insert([
-                'jeniskelamin' => $request->jeniskelamin,
-                'tinggibadan' => $request->tinggi,
-                'beratbadan' => $request->berat,
-                'umur' => $request->umur,
+        // public function saveAccountData(Request $request)
+        // {
+        //     // var_dump($request);
+        //     // DB::table('datadiri')->insert([
+        //     //     'jeniskelamin' => $request->jeniskelamin,
+        //     //     'tinggibadan' => $request->tinggi,
+        //     //     'beratbadan' => $request->berat,
+        //     //     'umur' => $request->umur,
 
-            ]);
-            return redirect('/dashboard');
-        }
+        //     // ]);
+        //     return redirect('/dashboard');
+        // }
 
         public function calculateCaloriNeeded(Request $request)
         {
@@ -105,11 +133,11 @@ class UpdateDataDiriController extends Controller
         }
         // by I Dewa Gede Cresna Saputra
         public function displayDashboard(Request $request) {
-            //mengambil data
-            $data = DB::table('datadiri')->get();
+            // //mengambil data
+            // $data = DB::table('datadiri')->get();
 
-            //mengirim data ke view
-            return view('eatwell.dashboard', compact('data'));
+            // //mengirim data ke view
+            // return view('eatwell.dashboard', compact('data'));
         }
 }
 

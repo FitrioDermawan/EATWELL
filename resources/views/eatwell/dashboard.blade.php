@@ -31,7 +31,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h2>Halo, Muhammad Irfan</h2>
+        <h2>Halo, {{ Auth::user()->name }}</h2>
     </div>
 
     @foreach ( $data as $d )
