@@ -17,6 +17,10 @@
     nav-link
 @endsection
 
+@section('riwayatpenyakit')
+    nav-link collapsed
+@endsection
+
 @section('pengaturan')
     nav-link collapsed
 @endsection
@@ -84,18 +88,6 @@
                     <label for="umur" class="col-sm-4 col-form-label">Umur</label>
                     <div class="col-sm-8 kolom-isian">
                         <input type="number" class="form-kalkulasi" id="umur" name="umur" placeholder="Umur kamu (15 - 80)" value="{{ old('umur') }}">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="alergi makanan" class="col-sm-4 col-form-label" id="alergi" name="alergi" >Alergi Makanan</label>
-                    <div class="col-sm-8 kolom-isian">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected></option>
-                            <option value="1">Kacang</option>
-                            <option value="2">Susu</option>
-                            <option value="3">Coklat</option>
-                          </select>
                     </div>
                 </div>
 

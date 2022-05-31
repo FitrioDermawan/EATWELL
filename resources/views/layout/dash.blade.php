@@ -181,6 +181,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="@yield('riwayatpenyakit')" href="riwayatpenyakit">
+                    <i class="bi bi-file-medical"></i>
+                    <span>Riwayat Penyakit</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="@yield('pengaturan')" href="">
                     <i class="bi bi-gear"></i>
                     <span>Pengaturan</span>

@@ -14,6 +14,10 @@
 @endsection
 
 @section('profil')
+    nav-link collapsed
+@endsection
+
+@section('riwayatpenyakit')
     nav-link
 @endsection
 
