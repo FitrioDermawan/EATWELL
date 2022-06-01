@@ -10,7 +10,7 @@ document.getElementById('calorie-form').addEventListener('submit', function(e){
     const umur = document.getElementById('umur');
     const berat = document.getElementById('berat');
     const tinggi = document.getElementById('tinggi');
-    const totalCalories = document.getElementById('total-calories');
+    const totalCalories = document.getElementById('totalcalories');
 
 
     // if (umur.value === '' || berat.value === '' || tinggi.value === '' || 80 < umur.value || umur.value < 15) {

@@ -28,14 +28,14 @@
 @section('content')
     <main id="datadiri" class="main">
         @if (count($errors) > 0)
-                    <div class="col-4 belumdiisi">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+            <div class="col-4 belumdiisi">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="card card-body mt-5">
             <h1 class="heading display-5 pb-3">Data Diri</h1>
             <form id="calorie-form" action="/dashboard" method="POST">
@@ -58,36 +58,35 @@
                     </div>
                 </fieldset>
 
-                {{-- <div class="form-group row">
-                    <label for="jeniskelamin" class="col-sm-4 col-form-label" id="jeniskelamin" name="jeniskelamin" >Jenis Kelamin</label>
-                    <div class="col-sm-8 kolom-isian">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected></option>
-                            <option value="M">Pria</option>
-                            <option value="F">Wanita</option>
-                          </select>
-                    </div>
-                </div> --}}
-
                 <div class="form-group row">
                     <label for="tinggi" class="col-sm-4 col-form-label">Tinggi</label>
                     <div class="col-sm-8 kolom-isian">
-                        <input type="number" class="form-kalkulasi" id="tinggi" name="tinggi" placeholder="Tinggi kamu" value="{{ old('tinggi') }}">
+                        <input type="number" class="form-kalkulasi" id="tinggi" name="tinggi" placeholder="Tinggi kamu"
+                            value="{{ old('tinggi') }}">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="berat" class="col-sm-4 col-form-label">Berat Badan</label>
                     <div class="col-sm-8 kolom-isian">
-                        <input type="number" class="form-kalkulasi" id="berat" name="berat"
-                            placeholder="Berat badan kamu" value="{{ old('berat') }}">
+                        <input type="number" class="form-kalkulasi" id="berat" name="berat" placeholder="Berat badan kamu"
+                            value="{{ old('berat') }}">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="umur" class="col-sm-4 col-form-label">Umur</label>
                     <div class="col-sm-8 kolom-isian">
-                        <input type="number" class="form-kalkulasi" id="umur" name="umur" placeholder="Umur kamu (15 - 80)" value="{{ old('umur') }}">
+                        <input type="number" class="form-kalkulasi" id="umur" name="umur" placeholder="Umur kamu (15 - 80)"
+                            value="{{ old('umur') }}">
+                    </div>
+                </div>
+
+                <div class="form-group row" id="results">
+                    <label for="totalcalories" class="col-sm-4 col-form-label">Total Calories</label>
+                    <div class="col-sm-8 kolom-isian">
+                        <input type="number" class="form-kalkulasi" id="totalcalories" name="totalcalories" placeholder="Total Calories"
+                            value="{{ old('totalcalories') }}">
                     </div>
                 </div>
 
@@ -96,29 +95,56 @@
                 </div>
 
             </form>
-            <div id="results" class="pt-4">
+
+            {{-- <div id="results" class="pt-4">
                 <h5>Total Calories</h5>
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="number" class="form-control" id="total-calories" disabled>
+                        <input type="number" class="form-kalkulasi" id="totalcalories" name="totalcalories"
+                            value="{{ old('totalcalories') }}">
                     </div>
-                </div>
-            </div>
-            {{-- <div class="row">
-                <div class="col-md-4 m-auto">
-                    @if(session('message'))
-                    <div class="alert alert-warning">
-                        <h1 class="text-center">{{ session('message') }}</h1>
-                    </div>
-                    @endif
                 </div>
             </div> --}}
+
+
         </div>
 
 
     </main>
 
-    <script src="{{ asset('assets/js/datadiri.js') }}"></script>
+    <script>
+        document.getElementById('calorie-form').addEventListener('submit', function(e){
+    document.getElementById('results').style.display = 'none';
+
+    setTimeout(calculateCalories, 10);
+  });
+
+  function calculateCalories(e) {
+
+    const jeniskelamin = document.querySelector('input[name="jeniskelamin"]:checked');
+    const umur = document.getElementById('umur');
+    const berat = document.getElementById('berat');
+    const tinggi = document.getElementById('tinggi');
+    const totalCalories = document.getElementById('totalcalories');
+
+    if(jeniskelamin.id === 'M') {
+      totalCalories.value = Math.round(1.2 * (66.5 + (13.75 * parseFloat(berat.value)) + (5.003 * parseFloat(tinggi.value)) - (6.755 * parseFloat(umur.value))));
+    }
+     else if(jeniskelamin.id === 'F') {
+      totalCalories.value = Math.round(1.2 * (655 + (9.563 * parseFloat(berat.value)) + (1.850 * parseFloat(tinggi.value)) - (4.676 * parseFloat(umur.value))));
+    }
+     else {
+      totalCalories.value = Math.round(1.9 * (655 + (9.563 * parseFloat(berat.value)) + (1.850 * parseFloat(tinggi)) - (4.676 * parseFloat(umur.value))));
+    }
+
+    document.getElementById('results');
+  }
+
+
+    </script>
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>

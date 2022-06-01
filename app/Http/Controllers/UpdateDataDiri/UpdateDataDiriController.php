@@ -30,8 +30,7 @@ class UpdateDataDiriController extends Controller
                 'jeniskelamin' => 'required',
                 'tinggi' => 'required|numeric',
                 'berat' => 'required|numeric',
-                'umur' => 'required|numeric',
-                'alergi' => 'alpha'
+                'umur' => 'required|numeric'
             ],$messages);
 
             // $jk == $request->input('jeniskelamin');
@@ -51,15 +50,18 @@ class UpdateDataDiriController extends Controller
                 'tinggibadan' => $request->tinggi,
                 'beratbadan' => $request->berat,
                 'umur' => $request->umur,
-                'iduser' => $idusers
+                'iduser' => $idusers,
+                'totalkalori' => $request->totalcalories
 
             ]);
 
-            //mengambil data
-            $data = DB::table('datadiri')->get();
+                //mengambil data
+                $data = DB::table('datadiri')->get();
 
-            //mengirim data ke view
-            return view('eatwell.dashboard', compact('data'));
+                //mengirim data ke view
+                return view('eatwell.dashboard', compact('data'));
+
+
 
 
             // //preproces data request
@@ -133,11 +135,13 @@ class UpdateDataDiriController extends Controller
         }
         // by I Dewa Gede Cresna Saputra
         public function displayDashboard(Request $request) {
-            // //mengambil data
-            // $data = DB::table('datadiri')->get();
 
-            // //mengirim data ke view
-            // return view('eatwell.dashboard', compact('data'));
+                //mengambil data
+            $data = DB::table('datadiri')->get();
+
+            //mengirim data ke view
+            return view('eatwell.dashboard', compact('data'));
+
         }
 }
 
