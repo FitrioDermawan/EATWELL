@@ -47,7 +47,7 @@
                         <select name="karbohidrat" id="karbohidrat" class="form-control" placeholder="Ayam">
                             @foreach ($food as $m)
                             @if ($m->jenismakanan == "Karbohidrat")
-                            <option value="{{$m->namamakanan}}">{{$m->namamakanan}}</option>
+                            <option value="{{$m->kalorimakanan}}">{{$m->namamakanan}}</option>
                             @endif
 
                             @endforeach
@@ -63,7 +63,7 @@
                         <select name="protein" id="protein" class="form-control">
                             @foreach ($food as $m)
                             @if ($m->jenismakanan == "Protein")
-                            <option value="{{$m->namamakanan}}">{{$m->namamakanan}}</option>
+                            <option value="{{$m->kalorimakanan}}">{{$m->namamakanan}}</option>
                             @endif
 
                             @endforeach
@@ -79,7 +79,7 @@
                         <select name="BuahSayur" id="BuahSayur" class="form-control">
                             @foreach ($food as $m)
                             @if ($m->jenismakanan == "Buah" or $m->jenismakanan == "Sayur")
-                            <option value="{{$m->namamakanan}}">{{$m->namamakanan}}</option>
+                            <option value="{{$m->kalorimakanan}}">{{$m->namamakanan}}</option>
                             @endif
 
                             @endforeach
