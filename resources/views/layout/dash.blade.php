@@ -153,16 +153,16 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="@yield('dashboard') " href="dashboard">
-                    <i class="bi bi-grid-1x2"></i>
-                    <span>Dashboard</span>
+                <a class="@yield('home')" href="home">
+                    <i class="bi bi-house"></i>
+                    <span>Home</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="@yield('home')" href="">
-                    <i class="bi bi-house"></i>
-                    <span>Home</span>
+                <a class="@yield('dashboard') " href="dashboard">
+                    <i class="bi bi-grid-1x2"></i>
+                    <span>Dashboard</span>
                 </a>
             </li>
 

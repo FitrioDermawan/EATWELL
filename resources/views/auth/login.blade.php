@@ -72,7 +72,7 @@
     </div>
 </div> --}}
 
-<h1>Masuk</h1>
+<h1>Login</h1>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -83,7 +83,7 @@
                     </span>
                 @enderror
 
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="kata Sandi" required autocomplete="current-password">
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Kata Sandi" required autocomplete="current-password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
                 />
 
                 @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                    <a class="btn btn-link" id="forgotpassword" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
                 @endif

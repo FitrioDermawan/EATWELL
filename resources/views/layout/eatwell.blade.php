@@ -55,7 +55,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="dashboard">Fitur</a></li>
                     <li><a class="nav-link scrollto" href="#services">Cara Kerja</a></li>
                     <!--<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -77,15 +77,15 @@
           </li>-->
                     {{-- <li><a class="nav-link scrollto" href="{{ route('login') }}">Masuk</a></li>
                     <li><a class="getstarted scrollto" href="{{ route('register') }}">Buat Akun</a></li> --}}
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link active" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" id="regis" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

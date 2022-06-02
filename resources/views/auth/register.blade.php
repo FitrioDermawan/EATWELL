@@ -81,7 +81,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nama Panjang" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Nama panjang" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -89,7 +89,7 @@
                                 @enderror
 
 
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Alamat E-mail" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Alamat e-mail" value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -97,7 +97,7 @@
                                 @enderror
 
 
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="kata Sandi" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Kata sandi" required autocomplete="new-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -105,8 +105,11 @@
                                 @enderror
 
 
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="konfirmasi kata Sandi" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Konfirmasi kata sandi" required autocomplete="new-password">
 
                                <input type="submit" {{ __('Register') }}>
+
+                               <p>Kamu sudah punya akun? <span class="btn btn-link" id="loginlink" href="{{ route('login') }}">Login</span></p>
                     </form>
+
 @endsection
