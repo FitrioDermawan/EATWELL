@@ -1,10 +1,10 @@
 document.getElementById('calorie-form').addEventListener('submit', function(e){
     document.getElementById('results').style.display = 'none';
 
-    setTimeout(calculateCalories, 10);
+    setTimeout(calculateCaloriesNeeded, 10);
   });
 
-  function calculateCalories(e) {
+  function calculateCaloriesNeeded(e) {
 
     const jeniskelamin = document.querySelector('input[name="jeniskelamin"]:checked');
     const umur = document.getElementById('umur');
