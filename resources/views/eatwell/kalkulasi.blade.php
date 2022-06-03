@@ -93,6 +93,16 @@
                         <input type="submit" name="signup_submit" value="Hitung Kalori">
                     <hr>
                 </div>
+                @foreach ($food as $m)
+                <script>
+                    var select = document.getElementById('BuahSayur');
+var value = select.options[select.selectedIndex].value;
+document.getElementById("demo").innerHTML = value;
+                </script>
+
+                <h1 id="demo"></h1>
+@endforeach
+
 
             </div>
 
@@ -181,7 +191,6 @@
                             @if ($m->jenismakanan == "Karbohidrat")
                             <option value="{{$m->kalorimakanan}}">{{$m->namamakanan}}</option>
                             @endif
-
                             @endforeach
                           </select>
                     </div>
@@ -223,6 +232,7 @@
                         <input type="submit" name="signup_submit" value="Hitung Kalori">
                     <hr>
                 </div>
+
 
             </div>
 
