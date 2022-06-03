@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layout.reglog')
+@section('title', 'Reset Password')
 
 @section('content')
 <div class="container">

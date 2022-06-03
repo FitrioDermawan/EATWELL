@@ -73,14 +73,14 @@
         </div>
     </div>
 
-    <h1 id="demo"></h1>
+    {{-- <h1 id="demo"></h1>
 
     <script>
         var a = {{$d->totalkalori}};
         var x = Math.round(1/3 * a);
     document.getElementById("demo").innerHTML = x;
-    </script>
-    @endforeach
+    </script> --}}
+
 
     <br>
     <br>
@@ -110,11 +110,16 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-xl-8">
-                                <select name="kalori" id="kalori">
-                                    <option value="MinKalori">Min-Kalori</option>
-                                    <option value="MaxKalori">Max-Kalori</option>
-                                  </select>
-                            <h2>300 kkal</h2>
+                            <p>Total Kalori</p>
+
+                            <h2 id="makanpagi"></h2>
+
+                            <script>
+                                var a = {{$d->totalkalori}};
+                                var x = Math.round(1/3 * a);
+                            document.getElementById("makanpagi").innerHTML = x + " kkal";
+                            </script>
+
                             </div>
                             <div class="col-xl-4">
                                 <img src="{{ asset('assets/eatimg/pagi.png') }}" class="img-fluid" alt="">
@@ -126,7 +131,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p>Kamu bisa mencapai tujuan kamu dengan jogging sejauh 2.5 km</p>
+                        {{-- <p>Kamu bisa mencapai tujuan kamu dengan jogging sejauh 2.5 km</p> --}}
                     </div>
                 </div>
             </div>
@@ -135,11 +140,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-xl-8">
-                                <select name="kalori" id="kalori">
-                                    <option value="MinKalori">Min-Kalori</option>
-                                    <option value="MaxKalori">Max-Kalori</option>
-                                  </select>
-                            <h2>400 kkal</h2>
+                                <p>Total Kalori</p>
+
+                                <h2 id="makansiang"></h2>
+
+                                <script>
+                                    var a = {{$d->totalkalori}};
+                                    var x = Math.round(1.2/3 * a);
+                                document.getElementById("makansiang").innerHTML = x + " kkal";
+                                </script>
                             </div>
                             <div class="col-xl-4">
                                 <img src="{{ asset('assets/eatimg/siang.png') }}" class="img-fluid" alt="">
@@ -151,7 +160,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p>Kamu bisa mencapai tujuan kamu dengan melakukan HIIT Workout selama 20 menit</p>
+                        {{-- <p>Kamu bisa mencapai tujuan kamu dengan melakukan HIIT Workout selama 20 menit</p> --}}
                     </div>
                 </div>
             </div>
@@ -160,11 +169,15 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-xl-8">
-                                <select name="kalori" id="kalori">
-                                    <option value="MinKalori">Min-Kalori</option>
-                                    <option value="MaxKalori">Max-Kalori</option>
-                                  </select>
-                            <h2>300 kkal</h2>
+                                <p>Total Kalori</p>
+
+                            <h2 id="makanmalam"></h2>
+
+                            <script>
+                                var a = {{$d->totalkalori}};
+                                var x = Math.round(0.8/3 * a);
+                            document.getElementById("makanmalam").innerHTML = x + " kkal";
+                            </script>
                             </div>
                             <div class="col-xl-4">
                                 <img src="{{ asset('assets/eatimg/malam.png') }}" class="img-fluid" alt="">
@@ -176,11 +189,11 @@
                             </div>
                         </div>
                         <hr>
-                        <p>Kamu bisa mencapai tujuan kamu dengan melakukan Gym Workout selama 50 menit</p>
+                        {{-- <p>Kamu bisa mencapai tujuan kamu dengan melakukan Gym Workout selama 50 menit</p> --}}
                     </div>
                 </div>
             </div>
         </div>
 </main>
-
+@endforeach
 @endsection
