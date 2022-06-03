@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KalkulasiController;
+use App\Http\Controllers\UpdateRiwayatPenyakitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::get('/riwayatpenyakit','UpdateRiwayatPenyakitController@displayRiwayatPen
 
 Route::get('/buatakun/verifikasi','EatController@verif');
 
+
+Route::post('/riwayatpenyakit','UpdateRiwayatPenyakitController@saveRiwayatPenyakit');
 
 
 

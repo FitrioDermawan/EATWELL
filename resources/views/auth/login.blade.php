@@ -91,7 +91,7 @@
                     </span>
                 @enderror
 
-                <input type="submit"
+                <input type="submit" value="Masuk"
                     {{ __('Login') }}
                 />
 

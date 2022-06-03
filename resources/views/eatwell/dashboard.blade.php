@@ -65,7 +65,15 @@
             </div>
         </div>
     </div>
+    <div class="form-group row" id="results">
+        <label for="totalcalories" class="col-sm-4 col-form-label">Total Calories</label>
+        <div class="col-sm-8 kolom-isian">
+            <input type="number" class="form-kalkulasi" id="totalcalories" name="totalcalories" placeholder="Total Calories"
+                value="{{$d->totalkalori}}">
+        </div>
+    </div>
     @endforeach
+
     <br>
     <br>
     <div class="pagetitle">

@@ -38,7 +38,7 @@
         @endif
         <div class="card card-body mt-5">
             <h1 class="heading display-5 pb-3">Data Diri</h1>
-            <form id="calorie-form" action="/dashboard" method="POST">
+            <form id="calorie-form" action="/dashboard" method="POST"  onsubmit="return calculateCalories();">
                 {{ csrf_field() }}
 
                 <fieldset class="form-group">
@@ -82,13 +82,17 @@
                     </div>
                 </div>
 
-                <div class="form-group row" id="results">
+                <input type="hidden" class="form-kalkulasi" id="totalcalories" name="totalcalories" placeholder="Total Calories"
+                            value="{{ old('totalcalories') }}">
+                    {{-- </div> --}}
+
+                {{-- <div class="form-group row" id="results">
                     <label for="totalcalories" class="col-sm-4 col-form-label">Total Calories</label>
                     <div class="col-sm-8 kolom-isian">
                         <input type="number" class="form-kalkulasi" id="totalcalories" name="totalcalories" placeholder="Total Calories"
                             value="{{ old('totalcalories') }}">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <input type="submit" value="Simpan" class="btn btn-primary btn-block">
@@ -113,13 +117,13 @@
     </main>
 
     <script>
-        document.getElementById('calorie-form').addEventListener('submit', function(e){
-    document.getElementById('results').style.display = 'none';
+//     document.getElementById('calorie-form').addEventListener('submit', function(){
+//     document.getElementById('results').style.display = "none";
+//   });
 
-    setTimeout(calculateCalories, 10);
-  });
+  function calculateCalories() {
 
-  function calculateCalories(e) {
+    alert('lagingitung');
 
     const jeniskelamin = document.querySelector('input[name="jeniskelamin"]:checked');
     const umur = document.getElementById('umur');
@@ -138,6 +142,8 @@
     }
 
     document.getElementById('results');
+
+    return true;
   }
 
 

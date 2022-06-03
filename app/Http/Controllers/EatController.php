@@ -8,7 +8,7 @@ class EatController extends Controller
 {
     //
     public function index() {
-        return view('eatwell.home') ;
+        return view('eatwell.index') ;
     }
 
     public function reg() {
