@@ -72,6 +72,14 @@
                 value="{{$d->totalkalori}}">
         </div>
     </div>
+
+    <h1 id="demo"></h1>
+
+    <script>
+        var a = {{$d->totalkalori}};
+        var x = Math.round(1/3 * a);
+    document.getElementById("demo").innerHTML = x;
+    </script>
     @endforeach
 
     <br>
