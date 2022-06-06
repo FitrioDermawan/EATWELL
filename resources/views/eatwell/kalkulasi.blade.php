@@ -86,9 +86,9 @@
                         </select>
                     </div>
                 </div>
-
-                <div class="col-lg-8">
-                    <input type="button" id="hitungKalori" name="signup_submit" value="Hitung Kalori">
+                <br>
+                <div class="col-lg-9">
+                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori" name="signup_submit" value="Hitung Kalori" class="btn btn-primary btn-block">
                     <hr>
                 </div>
                 {{-- @foreach ($food as $m) --}}
@@ -109,8 +109,8 @@ hitungKalori.addEventListener('click', function() {
       console.log(total)
 });
                     </script>
-
-                    <h1 id="demo"></h1>
+                    <h5><b>Estimasi Kalori</b></h5>
+                    <h6 id="demo"></h6>
                 </div>
                 {{-- @endforeach --}}
 
@@ -171,9 +171,9 @@ hitungKalori.addEventListener('click', function() {
                         </select>
                     </div>
                 </div>
-
-                <div class="col-lg-8">
-                    <input type="button" id="hitungKalori2" name="signup_submit" value="Hitung Kalori">
+                <br>
+                <div class="col-lg-9">
+                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori2" name="signup_submit" value="Hitung Kalori" class="btn btn-primary btn-block">
                     <hr>
                 </div>
                 {{-- @foreach ($food as $m) --}}
@@ -194,8 +194,8 @@ hitungKalori2.addEventListener('click', function() {
       console.log(total)
 });
                     </script>
-
-                    <h1 id="demo2"></h1>
+                    <h5><b>Estimasi Kalori</b></h5>
+                    <h6 id="demo2"></h6>
                 </div>
                 {{-- @endforeach --}}
 
@@ -257,9 +257,9 @@ hitungKalori2.addEventListener('click', function() {
                         </select>
                     </div>
                 </div>
-
-                <div class="col-lg-8">
-                    <input type="button" id="hitungKalori3" name="signup_submit" value="Hitung Kalori">
+                <br>
+                <div class="col-lg-9">
+                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori3" name="signup_submit" value="Hitung Kalori" class="btn btn-primary btn-block">
                     <hr>
                 </div>
                 {{-- @foreach ($food as $m) --}}
@@ -275,13 +275,13 @@ hitungKalori3.addEventListener('click', function() {
       var selectedKarbohidrat = karbohidrat.selectedOptions;
       var buahsayur = document.getElementById('buahsayur3');
       var selectedBuahSayur = buahsayur.selectedOptions;
-      total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(selectedBuahSayur[0].value);
+      total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(selectedBuahSayur[0].value) ;
       document.getElementById("demo3").innerHTML = total;
       console.log(total)
 });
                     </script>
-
-                    <h1 id="demo3"></h1>
+                    <h5><b>Estimasi Kalori</b></h5>
+                    <h6 id="demo3"></h1>
                 </div>
                 {{-- @endforeach --}}
 
