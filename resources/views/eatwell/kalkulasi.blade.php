@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-6">
 
-                        <select name="karbohidrat" id="karbohidrat" class="form-control" >
+                        <select name="karbohidrat" id="karbohidrat" class="form-control">
                             @foreach ($food as $m)
                                 @if ($m->jenismakanan == 'Karbohidrat')
                                     <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
@@ -88,26 +88,28 @@
                 </div>
                 <br>
                 <div class="col-lg-9">
-                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori" name="signup_submit" value="Hitung Kalori" class="btn btn-primary btn-block">
+                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori" name="signup_submit"
+                        value="Hitung Kalori" class="btn btn-primary btn-block">
                     <hr>
                 </div>
                 {{-- @foreach ($food as $m) --}}
                 <div>
                     <script>
-                const hitungKalori = document.getElementById('hitungKalori');
+                        const hitungKalori = document.getElementById('hitungKalori');
 
-hitungKalori.addEventListener('click', function() {
-    var total = 0;
-      var protein = document.getElementById('protein');
-      var selectedProtein = protein.selectedOptions;
-      var karbohidrat = document.getElementById('karbohidrat');
-      var selectedKarbohidrat = karbohidrat.selectedOptions;
-      var buahsayur = document.getElementById('buahsayur');
-      var selectedBuahSayur = buahsayur.selectedOptions;
-      total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(selectedBuahSayur[0].value);
-      document.getElementById("demo").innerHTML = total;
-      console.log(total)
-});
+                        hitungKalori.addEventListener('click', function() {
+                            var total = 0;
+                            var protein = document.getElementById('protein');
+                            var selectedProtein = protein.selectedOptions;
+                            var karbohidrat = document.getElementById('karbohidrat');
+                            var selectedKarbohidrat = karbohidrat.selectedOptions;
+                            var buahsayur = document.getElementById('buahsayur');
+                            var selectedBuahSayur = buahsayur.selectedOptions;
+                            total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
+                                selectedBuahSayur[0].value);
+                            document.getElementById("demo").innerHTML = total;
+                            console.log(total)
+                        });
                     </script>
                     <h5><b>Estimasi Kalori</b></h5>
                     <h6 id="demo"></h6>
@@ -173,26 +175,28 @@ hitungKalori.addEventListener('click', function() {
                 </div>
                 <br>
                 <div class="col-lg-9">
-                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori2" name="signup_submit" value="Hitung Kalori" class="btn btn-primary btn-block">
+                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori2" name="signup_submit"
+                        value="Hitung Kalori" class="btn btn-primary btn-block">
                     <hr>
                 </div>
                 {{-- @foreach ($food as $m) --}}
                 <div>
                     <script>
-                const hitungKalori2 = document.getElementById('hitungKalori2');
+                        const hitungKalori2 = document.getElementById('hitungKalori2');
 
-hitungKalori2.addEventListener('click', function() {
-    var total = 0;
-      var protein = document.getElementById('protein2');
-      var selectedProtein = protein.selectedOptions;
-      var karbohidrat = document.getElementById('karbohidrat2');
-      var selectedKarbohidrat = karbohidrat.selectedOptions;
-      var buahsayur = document.getElementById('buahsayur2');
-      var selectedBuahSayur = buahsayur.selectedOptions;
-      total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(selectedBuahSayur[0].value);
-      document.getElementById("demo2").innerHTML = total;
-      console.log(total)
-});
+                        hitungKalori2.addEventListener('click', function() {
+                            var total = 0;
+                            var protein = document.getElementById('protein2');
+                            var selectedProtein = protein.selectedOptions;
+                            var karbohidrat = document.getElementById('karbohidrat2');
+                            var selectedKarbohidrat = karbohidrat.selectedOptions;
+                            var buahsayur = document.getElementById('buahsayur2');
+                            var selectedBuahSayur = buahsayur.selectedOptions;
+                            total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
+                                selectedBuahSayur[0].value);
+                            document.getElementById("demo2").innerHTML = total;
+                            console.log(total)
+                        });
                     </script>
                     <h5><b>Estimasi Kalori</b></h5>
                     <h6 id="demo2"></h6>
@@ -218,10 +222,11 @@ hitungKalori2.addEventListener('click', function() {
                     </div>
                     <div class="col-6">
 
-                        <select name="karbohidrat" id="karbohidrat3" class="form-control " >
+                        <select name="karbohidrat" id="karbohidrat3" class="form-control ">
                             @foreach ($food as $m)
                                 @if ($m->jenismakanan == 'Karbohidrat')
-                                    <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
+                                    <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>'
+                                @elseif ($m->jenismakanan == 'Karbohidrat' )
                                 @endif
                             @endforeach
                         </select>
@@ -259,29 +264,32 @@ hitungKalori2.addEventListener('click', function() {
                 </div>
                 <br>
                 <div class="col-lg-9">
-                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori3" name="signup_submit" value="Hitung Kalori" class="btn btn-primary btn-block">
+                    <input type="button" style="padding:16px; border-radius: 16px;" id="hitungKalori3" name="signup_submit"
+                        value="Hitung Kalori" class="btn btn-primary btn-block">
                     <hr>
                 </div>
                 {{-- @foreach ($food as $m) --}}
                 <div>
                     <script>
-                const hitungKalori3 = document.getElementById('hitungKalori3');
+                        const hitungKalori3 = document.getElementById('hitungKalori3');
 
-hitungKalori3.addEventListener('click', function() {
-    var total = 0;
-      var protein = document.getElementById('protein3');
-      var selectedProtein = protein.selectedOptions;
-      var karbohidrat = document.getElementById('karbohidrat3');
-      var selectedKarbohidrat = karbohidrat.selectedOptions;
-      var buahsayur = document.getElementById('buahsayur3');
-      var selectedBuahSayur = buahsayur.selectedOptions;
-      total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(selectedBuahSayur[0].value) ;
-      document.getElementById("demo3").innerHTML = total;
-      console.log(total)
-});
+                        hitungKalori3.addEventListener('click', function() {
+                            var total = 0;
+                            var protein = document.getElementById('protein3');
+                            var selectedProtein = protein.selectedOptions;
+                            var karbohidrat = document.getElementById('karbohidrat3');
+                            var selectedKarbohidrat = karbohidrat.selectedOptions;
+                            var buahsayur = document.getElementById('buahsayur3');
+                            var selectedBuahSayur = buahsayur.selectedOptions;
+                            total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
+                                selectedBuahSayur[0].value);
+                            document.getElementById("demo3").innerHTML = total;
+                            console.log(total)
+                        });
                     </script>
                     <h5><b>Estimasi Kalori</b></h5>
-                    <h6 id="demo3"></h1>
+                    <h6 id="demo3">
+                        </h1>
                 </div>
                 {{-- @endforeach --}}
 
