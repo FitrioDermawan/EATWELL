@@ -32,6 +32,7 @@ Route::get('/dashboard','UpdateDataDiri\UpdateDataDiriController@displayDashboar
 
 Route::get('/kalkulasi', 'KalkulasiController@displayKalkulasi');
 
+
 Route::get('/riwayatpenyakit','UpdateRiwayatPenyakitController@displayRiwayatPenyakit');
 
 Route::get('/buatakun/verifikasi','EatController@verif');

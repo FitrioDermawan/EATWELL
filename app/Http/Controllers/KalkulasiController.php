@@ -28,12 +28,9 @@ class KalkulasiController extends Controller
     }
 
     public function isCalculationCorrect(){
-
+        
     }
 
-    public function displayCalculation(){
-
-    }
 
 
 }

@@ -26,7 +26,6 @@
 @endsection
 
 @section('content')
-//Made by Raynaldi Siahaan
 
 <main id="main" class="main">
 
@@ -34,14 +33,15 @@
         <h2>Halo, {{ Auth::user()->name }}</h2>
     </div>
 
-    @foreach ( $data as $d )
     <div class="col-lg-8">
         <div class="row">
             <div class="col-xxl-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Tinggi</h6>
+                        @foreach ( $data as $d )
                         <h3 class="card-content">{{$d->tinggibadan}} cm</h3>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -50,7 +50,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h6 class="card-title">Berat Badan</h6>
+                        @foreach ( $data as $d )
                         <h3 class="card-content">{{$d->beratbadan}} kg</h3>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -59,7 +61,9 @@
                 <div class="card umur">
                     <div class="card-body">
                         <h6 class="card-title">Umur</h6>
+                        @foreach ( $data as $d )
                         <h3 class="card-content">{{$d->umur}} Tahun</h3>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -113,13 +117,13 @@
                             <p>Total Kalori</p>
 
                             <h2 id="makanpagi"></h2>
-
+                            @foreach ( $data as $d )
                             <script>
                                 var a = {{$d->totalkalori}};
                                 var x = Math.round(1/3 * a);
                             document.getElementById("makanpagi").innerHTML = x + " kkal";
                             </script>
-
+                            @endforeach
                             </div>
                             <div class="col-xl-4">
                                 <img src="{{ asset('assets/eatimg/pagi.png') }}" class="img-fluid" alt="">
@@ -143,12 +147,13 @@
                                 <p>Total Kalori</p>
 
                                 <h2 id="makansiang"></h2>
-
+                                @foreach ( $data as $d )
                                 <script>
                                     var a = {{$d->totalkalori}};
                                     var x = Math.round(1.2/3 * a);
                                 document.getElementById("makansiang").innerHTML = x + " kkal";
                                 </script>
+                                @endforeach
                             </div>
                             <div class="col-xl-4">
                                 <img src="{{ asset('assets/eatimg/siang.png') }}" class="img-fluid" alt="">
@@ -172,12 +177,13 @@
                                 <p>Total Kalori</p>
 
                             <h2 id="makanmalam"></h2>
-
+                            @foreach ( $data as $d )
                             <script>
                                 var a = {{$d->totalkalori}};
                                 var x = Math.round(0.8/3 * a);
                             document.getElementById("makanmalam").innerHTML = x + " kkal";
                             </script>
+                            @endforeach
                             </div>
                             <div class="col-xl-4">
                                 <img src="{{ asset('assets/eatimg/malam.png') }}" class="img-fluid" alt="">
@@ -195,5 +201,4 @@
             </div>
         </div>
 </main>
-@endforeach
 @endsection
