@@ -56,6 +56,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+                    {{-- <li><a class="nav-link scrollto" href="dashboard">Fitur</a></li> --}}
                     <li><a class="nav-link scrollto" href="#services">Cara Kerja</a></li>
                     <!--<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

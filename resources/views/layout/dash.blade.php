@@ -113,11 +113,13 @@
 
                 </li>
 
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    {{ __('Login') }}
+                                </a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -174,9 +176,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="@yield('profil')" href="profil">
+                <a class="@yield('datadiri')" href="datadiri">
                     <i class="bi bi-person"></i>
-                    <span>Profil</span>
+                    <span>Data Diri</span>
                 </a>
             </li>
 

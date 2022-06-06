@@ -13,7 +13,7 @@
     nav-link collapsed
 @endsection
 
-@section('profil')
+@section('datadiri')
     nav-link collapsed
 @endsection
 
@@ -69,13 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group row" id="results">
-        <label for="totalcalories" class="col-sm-4 col-form-label">Total Calories</label>
-        <div class="col-sm-8 kolom-isian">
-            <input type="number" class="form-kalkulasi" id="totalcalories" name="totalcalories" placeholder="Total Calories"
-                value="{{$d->totalkalori}}">
-        </div>
-    </div>
+    <p hidden>{{$d->totalkalori}}</p>
 
     {{-- <h1 id="demo"></h1>
 
@@ -96,7 +90,7 @@
         <div class="row">
 
         <div class="col-xxl-3 col-md-4">
-            Sarapan
+            Makan Pagi
         </div>
         <div class="col-xxl-3 col-md-4">
             Makan Siang

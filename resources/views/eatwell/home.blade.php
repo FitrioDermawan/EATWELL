@@ -1,4 +1,4 @@
-@extends('layout.eatwell')
+@extends('layout.index')
 @section('title', '- Home')
 
 @section('content')

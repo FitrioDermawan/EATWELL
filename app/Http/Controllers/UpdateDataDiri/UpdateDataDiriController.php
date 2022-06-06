@@ -14,7 +14,7 @@ class UpdateDataDiriController extends Controller
 {
         //by Fitrio Dermawan
         public function displayProfil() {
-            return view('eatwell.profil') ;
+            return view('eatwell.datadiri') ;
         }
 
 

@@ -1,5 +1,5 @@
 @extends('layout.dash')
-@section('title', '- Profil')
+@section('title', '- Data Diri')
 
 @section('dashboard')
     nav-link collapsed
@@ -13,7 +13,7 @@
     nav-link collapsed
 @endsection
 
-@section('profil')
+@section('datadiri')
     nav-link
 @endsection
 

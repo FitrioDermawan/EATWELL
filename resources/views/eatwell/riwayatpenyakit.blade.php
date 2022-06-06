@@ -13,7 +13,7 @@
     nav-link collapsed
 @endsection
 
-@section('profil')
+@section('datadiri')
     nav-link collapsed
 @endsection
 

@@ -23,7 +23,7 @@ Route::get('/','EatController@index');
 Route::get('/buatakun','EatController@reg');
 Route::get('/masuk','EatController@login');
 
-Route::get('/profil','UpdateDataDiri\UpdateDataDiriController@displayProfil');
+Route::get('/datadiri','UpdateDataDiri\UpdateDataDiriController@displayProfil');
 // Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@saveAccountData');
 Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@ValidateData');
 Route::get('/dashboard','UpdateDataDiri\UpdateDataDiriController@displayDashboard');
