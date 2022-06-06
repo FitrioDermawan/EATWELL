@@ -54,9 +54,10 @@ class UpdateDataDiriController extends Controller
                 'totalkalori' => $request->totalcalories
 
             ]);
-
+            $user = Auth::user();
+            $idusers = $user->id;
                 //mengambil data
-                $data = DB::table('datadiri')->get();
+                $data = DB::table('datadiri')->where('iduser','=',$idusers)->get();
 
                 //mengirim data ke view
                 return view('eatwell.dashboard', compact('data'));
@@ -136,8 +137,10 @@ class UpdateDataDiriController extends Controller
         // by I Dewa Gede Cresna Saputra
         public function displayDashboard(Request $request) {
 
+            $user = Auth::user();
+            $idusers = $user->id;
                 //mengambil data
-            $data = DB::table('datadiri')->get();
+            $data = DB::table('datadiri')->where('iduser','=',$idusers)->get();
 
             //mengirim data ke view
             return view('eatwell.dashboard', compact('data'));
