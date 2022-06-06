@@ -47,9 +47,9 @@
                     <div class="col-6">
 
                         <select name="karbohidrat" id="karbohidrat" class="form-control">
-                            @foreach ($food as $m)
-                                @if ($m->jenismakanan == 'Karbohidrat')
-                                    <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
+                            @foreach ($food as $m, $sakit as $s)
+                                @if ($m->jenismakanan == 'Karbohidrat' & $s->penyakitbawaan == 'Alergi Seafood')
+                                    <option value="{{ $m->kalorimakanan}}">{{ $m->namamakanan }}</option>
                                 @endif
                             @endforeach
                         </select>

@@ -17,6 +17,10 @@ class KalkulasiController extends Controller
 
     $data = DB::table('datadiri')->select('totalkalori')->where('iduser','=',$idusers)->get();
 
+    //mengambil data penyakit dengan foreign key
+
+    $sakit = DB::table('penyakituser')->select('penyakitbawaan')->where('iduser','=',$idusers)->get();
+
     //mengirim data ke view
     return view('eatwell.kalkulasi', compact('food','data'));
     }
@@ -28,7 +32,7 @@ class KalkulasiController extends Controller
     }
 
     public function isCalculationCorrect(){
-        
+
     }
 
 
