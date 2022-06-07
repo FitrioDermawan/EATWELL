@@ -176,7 +176,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="@yield('datadiri')" href="datadiri">
+                <a class="@yield('updatedatadiri')" href="updatedatadiri">
                     <i class="bi bi-person"></i>
                     <span>Data Diri</span>
                 </a>

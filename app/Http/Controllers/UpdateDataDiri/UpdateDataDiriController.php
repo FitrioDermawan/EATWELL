@@ -146,5 +146,9 @@ class UpdateDataDiriController extends Controller
             return view('eatwell.dashboard', compact('data'));
 
         }
+
+        public function displayUpdateProfil() {
+            return view('eatwell.updatedatadiri') ;
+        }
 }
 
