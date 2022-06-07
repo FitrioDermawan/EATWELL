@@ -47,8 +47,8 @@
                     <div class="col-6">
 
                         <select name="karbohidrat" id="karbohidrat" class="form-control">
-                            @foreach ($food as $m, $sakit as $s)
-                                @if ($m->jenismakanan == 'Karbohidrat' & $s->penyakitbawaan == 'Alergi Seafood')
+                            @foreach ($food as $m)
+                                @if ($m->jenismakanan == 'Karbohidrat')
                                     <option value="{{ $m->kalorimakanan}}">{{ $m->namamakanan }}</option>
                                 @endif
                             @endforeach
@@ -94,6 +94,7 @@
                 </div>
                 {{-- @foreach ($food as $m) --}}
                 <div>
+                    @foreach( $data as $d)
                     <script>
                         const hitungKalori = document.getElementById('hitungKalori');
 
@@ -105,14 +106,22 @@
                             var selectedKarbohidrat = karbohidrat.selectedOptions;
                             var buahsayur = document.getElementById('buahsayur');
                             var selectedBuahSayur = buahsayur.selectedOptions;
+                            var a = {{$d->totalkalori}};
+                            var x = Math.round(1/3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
-                            document.getElementById("demo").innerHTML = total;
-                            console.log(total)
+                            if(x < total)
+                            document.getElementById("rekomendasi").innerHTML = "MAKAN";
+                            else
+                            document.getElementById("rekomendasi").innerHTML ="OLAHRAGA";
+                            document.getElementById("demo").innerHTML = total + "kkal";
                         });
                     </script>
+                    @endforeach
                     <h5><b>Estimasi Kalori</b></h5>
                     <h6 id="demo"></h6>
+                    <h5 id="rekomendasi"></h5>
+
                 </div>
                 {{-- @endforeach --}}
 
@@ -135,8 +144,8 @@
                     <div class="col-6">
 
                         <select name="karbohidrat" id="karbohidrat2" class="form-control">
-                            @foreach ($food as $m)
-                                @if ($m->jenismakanan == 'Karbohidrat')
+                            @foreach($food as $m)
+                                @if ($m->jenismakanan == 'Karbohidrat' )
                                     <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                 @endif
                             @endforeach
@@ -151,7 +160,7 @@
                     <div class="col-6">
                         <select name="protein" id="protein2" class="form-control">
                             @foreach ($food as $m)
-                                @if ($m->jenismakanan == 'Protein')
+                                @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit != 1)
                                     <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                 @endif
                             @endforeach
@@ -192,14 +201,20 @@
                             var selectedKarbohidrat = karbohidrat.selectedOptions;
                             var buahsayur = document.getElementById('buahsayur2');
                             var selectedBuahSayur = buahsayur.selectedOptions;
+                            var a = {{$d->totalkalori}};
+                            var x = Math.round(1.2/3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
-                            document.getElementById("demo2").innerHTML = total;
-                            console.log(total)
+                            if(x < total)
+                            document.getElementById("rekomendasi2").innerHTML = "MAKAN";
+                            else
+                            document.getElementById("rekomendasi2").innerHTML ="OLAHRAGA";
+                            document.getElementById("demo2").innerHTML = total + "kkal";
                         });
                     </script>
                     <h5><b>Estimasi Kalori</b></h5>
                     <h6 id="demo2"></h6>
+                    <h5 id="rekomendasi2"></h5>
                 </div>
                 {{-- @endforeach --}}
 
@@ -281,14 +296,20 @@
                             var selectedKarbohidrat = karbohidrat.selectedOptions;
                             var buahsayur = document.getElementById('buahsayur3');
                             var selectedBuahSayur = buahsayur.selectedOptions;
+                            var a = {{$d->totalkalori}};
+                            var x = Math.round(0.8/3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
-                            document.getElementById("demo3").innerHTML = total;
-                            console.log(total)
+                            if(x < total)
+                            document.getElementById("rekomendasi3").innerHTML = "MAKAN";
+                            else
+                            document.getElementById("rekomendasi3").innerHTML ="OLAHRAGA";
+                            document.getElementById("demo3").innerHTML = total + "kkal";
                         });
                     </script>
                     <h5><b>Estimasi Kalori</b></h5>
                     <h6 id="demo3">
+                    <h5 id="rekomendasi3"></h5>
                         </h1>
                 </div>
                 {{-- @endforeach --}}

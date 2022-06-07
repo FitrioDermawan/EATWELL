@@ -19,10 +19,9 @@ class KalkulasiController extends Controller
 
     //mengambil data penyakit dengan foreign key
 
-    $sakit = DB::table('penyakituser')->select('penyakitbawaan')->where('iduser','=',$idusers)->get();
-
+    $sakit = DB::table('penyakituser')->select('idriwayatpenyakit')->where('iduser','=',$idusers)->get();
     //mengirim data ke view
-    return view('eatwell.kalkulasi', compact('food','data'));
+    return view('eatwell.kalkulasi', compact('food','data','sakit',));
     }
 
     public function calculateData(Request $request){

@@ -22,19 +22,26 @@ class UpdateRiwayatPenyakitController extends Controller
 
     }
 
+    // public function tambahRiwayat() {
+    //     DB::table('penyakituser')->insert([
+    //         'idriwayatpenyakit' => $request->alergi,
+    //         'iduser' => $idusers,
+    //         'idriwayatpenyakit' => $request->bawaan,
+
+    //     ]);
+
+
+    //     return view('eatwell.riwayatpenyakit', compact('riwayat'));
+    // }
+
     public function saveRiwayatPenyakit(Request $request) {
 
         $user = Auth::user();
             $idusers = $user->id;
 
-        DB::table('penyakituser')->insert([
-            'penyakitbawaan' => $request->alergi,
-            'iduser' => $idusers
-
-        ]);
 
         DB::table('penyakituser')->insert([
-            'penyakitbawaan' => $request->penyakit,
+            'idriwayatpenyakit' => $request->alergi,
             'iduser' => $idusers
 
         ]);
