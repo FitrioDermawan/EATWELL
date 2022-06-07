@@ -27,6 +27,9 @@ Route::get('/datadiri','UpdateDataDiri\UpdateDataDiriController@displayProfil');
 // Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@saveAccountData');
 Route::post('/dashboard','UpdateDataDiri\UpdateDataDiriController@ValidateData');
 Route::get('/dashboard','UpdateDataDiri\UpdateDataDiriController@displayDashboard');
+//route buat edit data diri
+Route::get('/updatedatadiri','UpdateDataDiri\UpdateDataDiriController@displayUpdateProfil');
+
 
 
 
