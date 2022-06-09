@@ -63,32 +63,30 @@
                     <div class="col-6">
                         <select name="protein" id="protein" class="form-control">
                             @foreach ($sakit as $s)
-                            @if($s->idriwayatpenyakit != 0)
+                                @if ($s->idriwayatpenyakit == 1 && $s->idriwayatpenyakit ==2)
                                     @foreach ($food as $m)
                                         @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit == 0)
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                         @endif
                                     @endforeach
-                                @elseif ($s->idriwayatpenyakit == 1 && $s->idriwayatpenyakit !=2)
+                                    @endif
+
+                                    @if ($s->idriwayatpenyakit == 1)
                                     @foreach ($food as $m)
                                         @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit != 1)
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                         @endif
                                     @endforeach
-                                @elseif ($s->idriwayatpenyakit == 2)
+                                    @endif
+                                
+                                @if ($s->idriwayatpenyakit == 2)
                                     @foreach ($food as $m)
                                         @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit != 2)
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                         @endif
                                     @endforeach
-                                
-                                @else
-                                    @foreach ($food as $m)
-                                        @if ($m->jenismakanan == 'Protein')
-                                            <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
-                                        @endif
-                                    @endforeach
                                 @endif
+                                
                                     @endforeach
                         </select>
                     </div>
