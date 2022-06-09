@@ -51,7 +51,7 @@
             </div>
 
             <div class="col-7  whitebox">
-                    <a class="col arrow" href="home">
+                    <a class="col arrow" href="/">
                         <img src="{{ asset('assets/eatimg/arrow_back.png') }}" class="img-fluid" alt="" >
                     </a>
                     <div class="col content">

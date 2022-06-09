@@ -85,6 +85,13 @@
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                         @endif
                                     @endforeach
+
+                                @else
+                                    @foreach ($food as $m)
+                                        @if ($m->jenismakanan == 'Protein')
+                                            <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
+                                        @endif
+                                    @endforeach
                                 @endif
                                 
                                     @endforeach
@@ -131,8 +138,13 @@
                                 var x = Math.round(1 / 3 * a);
                                 total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                     selectedBuahSayur[0].value);
+                                //DisplayFoodRecommendation
                                 if (x < total)
                                     document.getElementById("rekomendasi").innerHTML = "MAKAN";
+                                //DisplayMessage
+                                else if ( x =  total)
+                                    document.getElementById("rekomendasi").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
+                                //DisplayActivityRecommendation
                                 else
                                     document.getElementById("rekomendasi").innerHTML = "OLAHRAGA";
                                 document.getElementById("demo").innerHTML = total + "kkal";
@@ -212,6 +224,7 @@
                 {{-- @foreach ($food as $m) --}}
                 <div>
                     <script>
+                        //hitungKalori
                         const hitungKalori2 = document.getElementById('hitungKalori2');
 
                         hitungKalori2.addEventListener('click', function() {
@@ -226,8 +239,13 @@
                             var x = Math.round(1.2 / 3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
+                            //DisplayFoodRecommendation
                             if (x < total)
                                 document.getElementById("rekomendasi2").innerHTML = "MAKAN";
+                            //DisplayMessage
+                            else if ( x =  total)
+                                document.getElementById("rekomendasi2").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
+                            //DisplayActivityRecommendation
                             else
                                 document.getElementById("rekomendasi2").innerHTML = "OLAHRAGA";
                             document.getElementById("demo2").innerHTML = total + "kkal";
@@ -321,8 +339,13 @@
                             var x = Math.round(0.8 / 3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
+                            //DisplayFoodReccomendation
                             if (x < total)
                                 document.getElementById("rekomendasi3").innerHTML = "MAKAN";
+                            //DisplayMessage
+                            else if ( x =  total)
+                                document.getElementById("rekomendasi3").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
+                            //DisplayActivityRecommendation
                             else
                                 document.getElementById("rekomendasi3").innerHTML = "OLAHRAGA";
                             document.getElementById("demo3").innerHTML = total + "kkal";
