@@ -13,7 +13,7 @@
     nav-link
 @endsection
 
-@section('profil')
+@section('datadiri')
     nav-link collapsed
 @endsection
 
@@ -62,24 +62,33 @@
                     </div>
                     <div class="col-6">
                         <select name="protein" id="protein" class="form-control">
+                            @foreach ($food as $m)
+                                @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit != 1)
+                                    <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+
+                    {{-- <div class="col-3">
+                        <h3> Protein </h3>
+                    </div>
+                    <div class="col-6">
+                        <select name="protein" id="protein" class="form-control">
                             @foreach ($sakit as $s)
-                                @if ($s->idriwayatpenyakit == 1 && $s->idriwayatpenyakit ==2)
+                            @if($s->idriwayatpenyakit != 0)
                                     @foreach ($food as $m)
                                         @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit == 0)
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                         @endif
                                     @endforeach
-                                    @endif
-
-                                    @if ($s->idriwayatpenyakit == 1)
+                                @elseif ($s->idriwayatpenyakit == 1 && $s->idriwayatpenyakit !=2)
                                     @foreach ($food as $m)
                                         @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit != 1)
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
                                         @endif
                                     @endforeach
-                                    @endif
-                                
-                                @if ($s->idriwayatpenyakit == 2)
+                                @elseif ($s->idriwayatpenyakit == 2)
                                     @foreach ($food as $m)
                                         @if ($m->jenismakanan == 'Protein' && $m->idriwayatpenyakit != 2)
                                             <option value="{{ $m->kalorimakanan }}">{{ $m->namamakanan }}</option>
@@ -93,10 +102,9 @@
                                         @endif
                                     @endforeach
                                 @endif
-                                
                                     @endforeach
                         </select>
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="row">
@@ -122,6 +130,41 @@
                 </div>
                 {{-- @foreach ($food as $m) --}}
                 <div>
+                    @foreach ($data as $d)
+                    <script>
+                        //hitungKalori
+                        const hitungKalori = document.getElementById('hitungKalori');
+
+                        hitungKalori.addEventListener('click', function() {
+                            var total = 0;
+                            var protein = document.getElementById('protein');
+                            var selectedProtein = protein.selectedOptions;
+                            var karbohidrat = document.getElementById('karbohidrat');
+                            var selectedKarbohidrat = karbohidrat.selectedOptions;
+                            var buahsayur = document.getElementById('buahsayur');
+                            var selectedBuahSayur = buahsayur.selectedOptions;
+                            var a = {{ $d->totalkalori }};
+                            var x = Math.round(1 / 3 * a);
+                            total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
+                                selectedBuahSayur[0].value);
+                            //DisplayEatMessage
+                            if (x < total)
+                                document.getElementById("rekomendasi").innerHTML = "Kalori untuk makan malam anda lebih, disarankan untuk sedikit berolahraga!";
+                            //DisplayMessage
+                            else if (x > total)
+                                document.getElementById("rekomendasi").innerHTML = "Kalori untuk makan malam anda kurang, disarankan untuk makan lagi!";
+                            //DisplayActivityMeessage
+                            else
+                                document.getElementById("rekomendasi").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
+                            document.getElementById("demo").innerHTML = total + "kkal";
+                        });
+                    </script>
+                    @endforeach
+                    <h5><b>Estimasi Kalori</b></h5>
+                    <h6 id="demo"></h6>
+                    <h5 id="rekomendasi"></h5>
+                </div>
+                {{-- <div>
                     @foreach ($data as $d)
                         <script>
                             const hitungKalori = document.getElementById('hitungKalori');
@@ -155,7 +198,7 @@
                     <h6 id="demo"></h6>
                     <h5 id="rekomendasi"></h5>
 
-                </div>
+                </div> --}}
                 {{-- @endforeach --}}
 
 
@@ -239,15 +282,15 @@
                             var x = Math.round(1.2 / 3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
-                            //DisplayFoodRecommendation
+                            //DisplayEatMessage
                             if (x < total)
-                                document.getElementById("rekomendasi2").innerHTML = "MAKAN";
+                                document.getElementById("rekomendasi2").innerHTML = "Kalori untuk makan malam anda lebih, disarankan untuk sedikit berolahraga!";
                             //DisplayMessage
-                            else if ( x =  total)
-                                document.getElementById("rekomendasi2").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
-                            //DisplayActivityRecommendation
+                            else if (x > total)
+                                document.getElementById("rekomendasi2").innerHTML = "Kalori untuk makan malam anda kurang, disarankan untuk makan lagi!";
+                            //DisplayActivityMeessage
                             else
-                                document.getElementById("rekomendasi2").innerHTML = "OLAHRAGA";
+                                document.getElementById("rekomendasi2").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
                             document.getElementById("demo2").innerHTML = total + "kkal";
                         });
                     </script>
@@ -339,15 +382,15 @@
                             var x = Math.round(0.8 / 3 * a);
                             total = parseInt(selectedProtein[0].value) + parseInt(selectedKarbohidrat[0].value) + parseInt(
                                 selectedBuahSayur[0].value);
-                            //DisplayFoodReccomendation
+                            //DisplayEatMessage
                             if (x < total)
-                                document.getElementById("rekomendasi3").innerHTML = "MAKAN";
+                                document.getElementById("rekomendasi3").innerHTML = "Kalori untuk makan malam anda lebih, disarankan untuk sedikit berolahraga!";
                             //DisplayMessage
-                            else if ( x =  total)
-                                document.getElementById("rekomendasi3").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
-                            //DisplayActivityRecommendation
+                            else if (x > total)
+                                document.getElementById("rekomendasi3").innerHTML = "Kalori untuk makan malam anda kurang, disarankan untuk makan lagi!";
+                            //DisplayActivityMeessage
                             else
-                                document.getElementById("rekomendasi3").innerHTML = "OLAHRAGA";
+                                document.getElementById("rekomendasi3").innerHTML = "Makanan yang anda makan sudah sesuai dengan kebutuhan kalori";
                             document.getElementById("demo3").innerHTML = total + "kkal";
                         });
                     </script>

@@ -176,11 +176,12 @@
             </li>
 
             <li class="nav-item">
-                <a class="@yield('updatedatadiri')" href="updatedatadiri">
-                    <i class="bi bi-person"></i>
+                <a class="@yield('datadiri')" href="datadiri">
+                <i class="bi bi-person"></i>
                     <span>Data Diri</span>
                 </a>
             </li>
+
 
             <li class="nav-item">
                 <a class="@yield('riwayatpenyakit')" href="riwayatpenyakit">

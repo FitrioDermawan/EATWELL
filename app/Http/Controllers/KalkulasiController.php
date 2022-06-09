@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 class KalkulasiController extends Controller
 {
     public function displayKalkulasi()
@@ -23,15 +25,14 @@ class KalkulasiController extends Controller
     
     //mengirim data ke view
     return view('eatwell.kalkulasi', compact('food','data','sakit',));
+    
     }
 
-    public function calculateData(Request $request){
-
-
-
-    }
 
     public function isCalculationCorrect(){
+        $collection = collect(['idriwayatpenyakit' => 2, 'idriwayatpenyakit' => 1]);
+        $collection->contains(1);
+        $collection->contains(2);
 
     }
 
